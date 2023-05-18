@@ -1,4 +1,4 @@
-# Connecting Our Library to a Database
+# Connecting Our Library to a Database - downloaded
 
 ## Create a Postgres database with ElephantSQL
 
