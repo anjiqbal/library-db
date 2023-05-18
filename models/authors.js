@@ -2,7 +2,8 @@ import { pool } from "../db/index.js";
 
 export async function getAuthors() {
   // Query the database and return all authors
-  return [];
+  const result = await pool.query("SELECT * FROM authors")
+  return result.rows;
 }
 
 export async function searchAuthorsByName(searchTerm) {
