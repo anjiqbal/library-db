@@ -20,7 +20,10 @@ export async function searchAuthorsByName(searchTerm) {
 
 export async function getAuthorById(id) {
   // Query the database and return the book with a matching id
-  return {};
+  const values = [id];
+  const query = `SELECT * FROM authors WHERE id = $1`;
+  const result = await pool.query(query, values);
+  return result.rows;
 }
 
 export async function createAuthor(author) {
