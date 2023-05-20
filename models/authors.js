@@ -39,5 +39,9 @@ export async function updateAuthorById(id, updates) {
 
 export async function deleteAuthorById(id) {
   // Query the database to delete an author and return the deleted author
-  return {};
+  const values = [id]
+  const query = `DELETE from authors WHERE id = $1`
+  const result = await pool.query(query, values)
+  console.log(result.rows)
+  return result.rows;
 }
